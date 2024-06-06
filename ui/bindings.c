@@ -2,15 +2,14 @@
 
 static void onLogsButtonClicked(GtkWidget* widget, gpointer window){
     showTable(widget, window);
-    //showTicTac(widget, window);
 }
 
 static void onLoginButtonClicked(GtkWidget* widget, gpointer window){
     if (storeEvent("Authorization")){
-        showDialog(widget, window, "SQL was executed!", false);
+        showDialog(widget, window, "Authorization successful!", false);
     }
     else{
-        showDialog(widget, window, "SQL was not executed!", true);
+        showDialog(widget, window, "Authorization was failed!", true);
     }
 }
 
@@ -18,7 +17,7 @@ void activate(GtkApplication* app, gpointer user_data){
     GtkWidget* window, *login_button, *logs_button, *button_box;
 
     window = gtk_application_window_new(app);
-    gtk_window_set_title(GTK_WINDOW(window), "mini-games");
+    gtk_window_set_title(GTK_WINDOW(window), "tic-tac-toe");
     gtk_window_set_default_size(GTK_WINDOW(window), 400, 400);
     gtk_window_set_icon_name(GTK_WINDOW(window), "computer");
 

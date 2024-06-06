@@ -20,7 +20,7 @@ void showTicTac(GtkWidget* widget, gpointer window){
     GtkWidget* table_window;
     table_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_default_size(GTK_WINDOW(table_window), 400, 400);
-    gtk_window_set_title(GTK_WINDOW(table_window), "tic tac");
+    gtk_window_set_title(GTK_WINDOW(table_window), "game session");
     gtk_window_set_icon_name(GTK_WINDOW(table_window), "document-properties");
     gtk_window_set_transient_for(GTK_WINDOW(table_window), GTK_WINDOW(window));
     gtk_window_set_modal(GTK_WINDOW(table_window), TRUE);
@@ -30,7 +30,7 @@ void showTicTac(GtkWidget* widget, gpointer window){
     for (int i = 0; i < 9; i++) { // rows
         for (int j = 0; j < 9; j++) { // columns
             char label_text[20];
-            snprintf(label_text, sizeof(label_text), "Cell %d,%d", i + 1, j + 1);
+            snprintf(label_text, sizeof(label_text), "%d,%d", i + 1, j + 1);
             GtkWidget *label = gtk_label_new(label_text);
             gtk_table_attach(GTK_TABLE(table), label, j, j + 1, i, i + 1,
                              GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);
@@ -57,7 +57,7 @@ void showTable(GtkWidget* widget, gpointer window){
     for (int i = 0; i < 100; i++) { // rows
         for (int j = 0; j < 3; j++) { // columns
             char label_text[20];
-            snprintf(label_text, sizeof(label_text), "Cell %d,%d", i + 1, j + 1);
+            snprintf(label_text, sizeof(label_text), "%d,%d", i + 1, j + 1);
             GtkWidget *label = gtk_label_new(label_text);
             gtk_table_attach(GTK_TABLE(table), label, j, j + 1, i, i + 1,
                              GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);
