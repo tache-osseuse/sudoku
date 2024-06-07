@@ -17,7 +17,7 @@ void activate(GtkApplication* app, gpointer user_data){
     GtkWidget* window, *login_button, *logs_button, *button_box;
 
     window = gtk_application_window_new(app);
-    gtk_window_set_title(GTK_WINDOW(window), "tic-tac-toe");
+    gtk_window_set_title(GTK_WINDOW(window), "Sudoku");
     gtk_window_set_default_size(GTK_WINDOW(window), 400, 400);
     gtk_window_set_icon_name(GTK_WINDOW(window), "computer");
 
